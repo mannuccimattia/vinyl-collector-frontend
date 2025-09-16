@@ -1,0 +1,16 @@
+.logo {
+  width: 250px;
+}
+
+.navbar-brand,
+.nav-link {
+  cursor: pointer;
+}
+
+.navbar-toggler {
+  scale: 0.8;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
