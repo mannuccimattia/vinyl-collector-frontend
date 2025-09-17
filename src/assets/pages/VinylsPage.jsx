@@ -39,22 +39,21 @@ const VinylsPage = () => {
     }, [currentPage]);
 
     return (
-        <>
-            <div className="container">
+        <div className="container">
+            {vinyls.length > 0 && <>
                 <div className="row gy-4 pt-5 my-5">
                     {vinyls.map(vinyl => (
                         <VinylCard key={`vin-${vinyl.id}`} vinyl={vinyl} />
                     ))}
                 </div>
 
-                {vinyls.length > 0 && <Pagination
+                <Pagination
                     pagination={pagination}
                     currentPage={currentPage}
-                    setCurrentPage={setCurrentPage} />
-                }
-
-            </div>
-        </>
+                    setCurrentPage={setCurrentPage}
+                />
+            </>}
+        </div>
     )
 }
 

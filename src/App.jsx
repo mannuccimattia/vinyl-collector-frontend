@@ -4,6 +4,7 @@ import GlobalContext from './assets/contexts/GlobalContext'
 import MasterLayout from './assets/layouts/MasterLayout'
 import Homepage from './assets/pages/Homepage'
 import VinylsPage from './assets/pages/VinylsPage'
+import VinylDetailPage from './assets/pages/VinylDetailPage'
 
 const App = () => {
 
@@ -18,6 +19,7 @@ const App = () => {
             <Route element={<MasterLayout />}>
               <Route index element={<Homepage />} />
               <Route path="/vinyls" element={<VinylsPage />} />
+              <Route path='/vinyls/:id' element={<VinylDetailPage />} />
             </Route>
           </Routes>
         </BrowserRouter>

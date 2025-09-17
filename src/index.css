@@ -68,3 +68,8 @@
   opacity: 1;
   visibility: visible;
 }
+
+.vinyl-card-label {
+  display: inline-block;
+  width: 100px;
+}
