@@ -6,7 +6,7 @@ const Pagination = ({ pagination, currentPage, setCurrentPage }) => {
     }
 
     return (
-        <div className="d-flex justify-content-between align-items-center" data-bs-theme="dark">
+        <div className="d-flex justify-content-between align-items-center mb-4" data-bs-theme="dark">
             <small className="text-secondary">Showing <b>{pagination.from}</b> to <b>{pagination.to}</b> of <b>{pagination.total} results</b></small>
             <nav aria-label="Page navigation">
                 <ul className="pagination my-0">

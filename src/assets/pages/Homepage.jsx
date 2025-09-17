@@ -1,30 +1,42 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import GlobalContext from "../contexts/GlobalContext";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
+    const { setIsLoading } = useContext(GlobalContext);
+    const [randomVinyl, setRandomVinyl] = useState(null);
 
-    const { vinyls, setVinyls, setIsLoading } = useContext(GlobalContext);
+    const navigate = useNavigate();
 
-    const fetchVinyls = () => {
+    const getRndInteger = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    const getRndVinyl = () => {
         setIsLoading(true);
-        axios.get(`${import.meta.env.VITE_API_URL}`).then(resp => {
-            setTimeout(() => {
-                console.log(resp.data.data)
-                setVinyls(resp.data.data);
-                setIsLoading(false);
-            }, 10);
+        axios.get(`${import.meta.env.VITE_API_URL}/all`).then(resp => {
+            const randomIndex = getRndInteger(0, resp.data.data.length - 1);
+            setRandomVinyl(resp.data.data[randomIndex]);
+            setIsLoading(false);
         }).catch(err => console.log(err));
     }
 
     useEffect(() => {
-        fetchVinyls();
+        getRndVinyl();
     }, []);
 
     return (
-        < div >
+        <div className="container">
+            <div className="row my-5 pt-5 justify-content-center">
+                <h1 className="col-auto my-5 pt-5 display-3 fw-semibold">My Vinyl Collection</h1>
+                <div className="col-12 d-flex justify-content-center">
+                    <button className="btn home-btn btn-outline-info" onClick={() => navigate("/vinyls")}>Browse All</button>
+                    <button className="btn home-btn btn-outline-info" onClick={() => navigate(`/vinyls/${randomVinyl.id}`)}>Get one Random</button>
+                </div>
 
-        </div >
+            </div>
+        </div>
     )
 }
 

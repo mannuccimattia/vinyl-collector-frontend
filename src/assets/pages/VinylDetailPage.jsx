@@ -16,10 +16,8 @@ const VinylDetailPage = () => {
         setIsLoading(true);
         axios.get(`${import.meta.env.VITE_API_URL}/${id}`)
             .then(resp => {
-                setTimeout(() => {
-                    setVinyl(resp.data.data);
-                    setIsLoading(false);
-                }, 300);
+                setVinyl(resp.data.data);
+                setIsLoading(false);
             }).catch(err => console.log(err));
     };
 
@@ -61,7 +59,7 @@ const VinylDetailPage = () => {
                             <span className="vinyl-card-label">Catalog:</span>
                             <span>{vinyl.catalog_number}</span>
                         </div>
-                        <div className="d-flex">
+                        <div className="d-flex mb-2">
                             <span className="vinyl-card-label">Release:</span>
                             <span><a href={vinyl.release_url} target="_blank" className="text-decoration-none">
                                 [{vinyl.release_num}]

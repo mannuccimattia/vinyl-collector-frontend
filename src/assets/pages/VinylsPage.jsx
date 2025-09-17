@@ -20,17 +20,15 @@ const VinylsPage = () => {
         setIsLoading(true);
         axios.get(`${import.meta.env.VITE_API_URL}?page=${page}`)
             .then(resp => {
-                setTimeout(() => {
-                    setVinyls(resp.data.data.data);
-                    setPagination({
-                        total: resp.data.data.total,
-                        lastPage: resp.data.data.last_page,
-                        currentPage: resp.data.data.current_page,
-                        from: resp.data.data.from,
-                        to: resp.data.data.to
-                    });
-                    setIsLoading(false);
-                }, 300);
+                setVinyls(resp.data.data.data);
+                setPagination({
+                    total: resp.data.data.total,
+                    lastPage: resp.data.data.last_page,
+                    currentPage: resp.data.data.current_page,
+                    from: resp.data.data.from,
+                    to: resp.data.data.to
+                });
+                setIsLoading(false);
             }).catch(err => console.log(err));
     }
 
