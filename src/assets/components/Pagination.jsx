@@ -7,7 +7,7 @@ const Pagination = ({ pagination, currentPage, setCurrentPage }) => {
 
     return (
         <div className="d-flex justify-content-between align-items-center mb-4" data-bs-theme="dark">
-            <small className="text-secondary">Showing <b>{pagination.from}</b> to <b>{pagination.to}</b> of <b>{pagination.total} results</b></small>
+            <small className="text-secondary">Showing <b>{pagination.from}</b> to <b>{pagination.to}</b> of <b>{pagination.total}</b> results.</small>
             <nav aria-label="Page navigation">
                 <ul className="pagination my-0">
                     <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
@@ -16,7 +16,7 @@ const Pagination = ({ pagination, currentPage, setCurrentPage }) => {
                             onClick={() => handlePageChange(currentPage - 1)}
                             disabled={currentPage === 1}
                         >
-                            Previous
+                            &#129168; <small>Previous</small>
                         </button>
                     </li>
 
@@ -40,7 +40,7 @@ const Pagination = ({ pagination, currentPage, setCurrentPage }) => {
                             onClick={() => handlePageChange(currentPage + 1)}
                             disabled={currentPage === pagination.lastPage}
                         >
-                            Next
+                            <small>Next</small> &#129170;
                         </button>
                     </li>
                 </ul>

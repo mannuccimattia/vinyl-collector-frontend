@@ -27,7 +27,7 @@ const VinylDetailPage = () => {
 
     return (
         <div className="container">
-            <div className="row gy-4 pt-5 my-5">
+            <div className="row gy-4 pt-5 my-5 no-margin">
                 {!isLoading && <>
                     <div className="col-12 col-lg-4">
                         <img src={vinyl.cover} alt={`Cover of the album ${vinyl.title} by ${vinyl.artist}`} className="img-fluid mb-2" />
@@ -59,7 +59,7 @@ const VinylDetailPage = () => {
                             <span className="vinyl-card-label">Catalog:</span>
                             <span>{vinyl.catalog_number}</span>
                         </div>
-                        <div className="d-flex mb-2">
+                        <div className="d-flex mb-3">
                             <span className="vinyl-card-label">Release:</span>
                             <span><a href={vinyl.release_url} target="_blank" className="text-decoration-none">
                                 [{vinyl.release_num}]

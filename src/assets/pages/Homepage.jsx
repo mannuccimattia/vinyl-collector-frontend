@@ -32,7 +32,7 @@ const Homepage = () => {
                 <h1 className="col-auto my-5 pt-5 display-3 fw-semibold">My Vinyl Collection</h1>
                 <div className="col-12 d-flex justify-content-center">
                     <button className="btn home-btn btn-outline-info" onClick={() => navigate("/vinyls")}>Browse All</button>
-                    <button className="btn home-btn btn-outline-info" onClick={() => navigate(`/vinyls/${randomVinyl.id}`)}>Get one Random</button>
+                    <button className="btn home-btn btn-outline-info" onClick={() => navigate(`/vinyls/${randomVinyl.id}`)}>Pick Random</button>
                 </div>
 
             </div>

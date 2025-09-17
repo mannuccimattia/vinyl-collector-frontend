@@ -25,6 +25,8 @@ main {
   background-image: url("../public/imgs/home-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   position: relative;
 }
 
@@ -108,4 +110,11 @@ main>* {
 .vinyl-card-label {
   display: inline-block;
   width: 100px;
+}
+
+@media (max-width:1199px) {
+  .row.no-margin {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
 }
