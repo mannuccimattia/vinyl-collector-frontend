@@ -9,7 +9,7 @@ const Header = () => {
                 <div className="container">
                     <div className="navbar-brand" onClick={() => navigate("/")}>
                         <div className="logo">
-                            <img src="/public/imgs/logo/vinylcollector-white.png" className='img-fluid' alt="website logo" />
+                            <img src="/imgs/logo/vinylcollector-white.png" className='img-fluid' alt="website logo" />
                         </div>
                     </div>
 

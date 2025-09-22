@@ -112,9 +112,23 @@ main>* {
   width: 100px;
 }
 
-@media (max-width:1199px) {
+@media (max-width:1199.98px) {
   .row.no-margin {
     margin-top: 0 !important;
     padding-top: 0 !important;
+  }
+}
+
+@media (max-width:575.98px) {
+  h1.fw-semibold {
+    font-size: 2rem;
+  }
+
+  .pagination small {
+    display: none;
+  }
+
+  small.text-secondary {
+    font-size: 0.6rem;
   }
 }
